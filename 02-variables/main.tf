@@ -2,56 +2,65 @@ variable "URL" {
   default = "example.com"
 }
 
-#Access a variable
-#how do i access a variable
-
+## Access variable
 output "URL" {
   value = var.URL
 }
-# variable is a combination of some other string.then we have to use ${}
+
+# Variable is a combination of some other string. Then we have to use ${}
 output "URL1" {
   value = "URL - ${var.URL}"
 }
 
-#data types
+# Data types
 variable "num1" {
-  default = "10"
+  default = 10
 }
+
 variable "bool1" {
-  default = "true"
+  default = true
 }
+
 variable "str1" {
   default = "Hello"
 }
-# numbers,booleans & strings
-#variable types
+
+# Numbers, Booleans & Strings
+
+# Variable types
 variable "str2" {
-  default = "WORLD"
+  default = "World"
 }
+
 variable "list1" {
   default = [
     10,
     20,
-    xyz,
+    "xyz",
     false
   ]
 }
-# list can have a multiple data types also
+
+# List can have combination of multiple data types also.
+
 variable "map1" {
   default = {
-    aws ={
-      trainer="john"
-      duration="30"
+    aws = {
+      trainer = "John"
+      duration = 30
     }
-    devops={
-        trainer="steve"
-        duration="30"
+    devops = {
+      trainer = "Steve"
+      duration = 20
     }
   }
 }
+
 output "list1_1" {
   value = var.list1[2]
 }
+
 output "map1_aws_trainer" {
-value =var.map1["aws"]["trainer"]
+  value = var.map1["aws"]["trainer"]
+  #value = var.map1["aws"].trainer
 }
