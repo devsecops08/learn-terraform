@@ -12,3 +12,15 @@ output "URL" {
 output "URL1" {
   value = "URL - ${var.URL}"
 }
+
+#data types
+variable "num1" {
+  default = "10"
+}
+variable "bool1" {
+  default = "true"
+}
+variable "str1" {
+  default = "Hello"
+}
+# numbers,booleans & strings
