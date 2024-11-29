@@ -23,7 +23,7 @@ resource "aws_instance""instance" {
           } 
 }
 
-resource "aws_route53_record" "frontend" {
+resource "aws_route53_record" "record" {
   count =length(var.instances)
   zone_id = "Z04036722QT9R780VLSOQ"
   name    = "${var.instances[count.index]}-dev.adevsecops08.online"
