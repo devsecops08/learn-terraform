@@ -7,5 +7,5 @@ resource "aws_instance" "instance" {
   }
 }
 
-variable "env" {}
+variable "env" {} 
 
