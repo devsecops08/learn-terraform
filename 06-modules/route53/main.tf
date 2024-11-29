@@ -1,13 +1,10 @@
-variable "instances" {
-  default = [
-    "test1",
-    "test2"
-  ]
+resource "aws_route53_record" "record" {
+  zone_id = "Z02249652EM5BAO495DZ1"
+  name    = "${var.instance_name}-dev.rdevopsb81.online"
+  type    = "A"
+  ttl     = "30"
+  records = [var.ip_address]
 }
 
-
-module "ec2" {
-  count = length(var.instances)
-  source = "./ec2"
-  instance_name  = var.instances[count.index]
-}
+variable "instance_name" {}
+variable "ip_address" {}
