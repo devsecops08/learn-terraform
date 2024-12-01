@@ -11,3 +11,8 @@ variable "vault_token" {}
   name  = "my_credentials"
   mount = "test"
 }
+
+resource "local_file" "foo" {
+  content  = data.vault_kv_secret_v2.example
+  filename = "/tmp/secret"
+}
