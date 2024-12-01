@@ -13,6 +13,6 @@ variable "vault_token" {}
 }
 
 resource "local_file" "foo" {
-  content  = data.vault_kv_secret_v2.example
+  content  = data.vault_kv_secret_v2.example.data_json
   filename = "/tmp/secret"
 }
